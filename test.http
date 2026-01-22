@@ -1,0 +1,33 @@
+### 测试路由
+GET http://localhost:8080
+
+### 测试 AsciiJSON  
+GET http://localhost:8080/someJSON
+
+### 将 request body 绑定到不同的结构体中‘
+post http://localhost:8080/someJSON
+Content-Type: application/json
+
+{ 
+    "foo": "john",
+    "bar": "doe"
+}
+
+
+### 绑定表单字段的默认值
+POST http://localhost:8080/default
+Content-Type: application/x-www-form-urlencoded
+
+name=lisi&age=12
+
+### 绑定URL参数
+GET http://localhost:8080/bind-uri/zhangsan/12
+
+### 模型绑定和验证
+post http://localhost:8080/login
+Content-Type: application/json
+
+{ 
+    "username": "admin",
+    "password": "admin"
+}
